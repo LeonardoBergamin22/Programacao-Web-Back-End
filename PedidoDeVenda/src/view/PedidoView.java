@@ -13,6 +13,7 @@ public class PedidoView {
 		System.out.println("Quantidade: " + pedido.getQuantindade() );
 		System.out.println("Data: " + pedido.getData());
 		System.out.println("+--------------------------------+");
+		System.out.println("                                  ");
 
 	}
 }

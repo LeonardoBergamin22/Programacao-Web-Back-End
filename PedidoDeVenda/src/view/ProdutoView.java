@@ -11,6 +11,6 @@ public class ProdutoView {
 		System.out.println("Produto: " + produto.getNome());
 		System.out.println("Preco: " + produto.getPreco());
 		System.out.println("+--------------------------------+");
-
+		System.out.println("                                  ");
 	}
 }

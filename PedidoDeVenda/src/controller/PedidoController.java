@@ -18,8 +18,9 @@ public class PedidoController {
 	Pedido pedido = new Pedido(idPedido, quantidade, data, cliente, produto);
 	return pedido;
 }
-public void exibirDetalhesPedido(Pedido pedido) {
-	pedidoView.exibirPedido(pedido);
+
+	public void exibirDetalhesPedido(Pedido pedido) {
+		pedidoView.exibirPedido(pedido);
 	
 }
 }

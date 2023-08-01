@@ -2,6 +2,7 @@ package principal;
 
 import java.util.Date;
 
+import controller.ClienteController;
 import controller.PedidoController;
 import controller.ProdutoController;
 import model.Cliente;
@@ -12,20 +13,28 @@ import view.PedidoView;
 public class Main {
 
 	public static void main(String[] args) {
+		
+		
 
-		Cliente cliente = new Cliente(1, "Leonardo ", "Leo@email.com");
+		ClienteController clienteController= new ClienteController();
+		Cliente cliente= clienteController.criarCliente(111, "leonardo", "leo@email.com");
 
-		ProdutoController pc1 = new ProdutoController();
-		Produto produto = pc1.criarproduto(101, "Computador", 3500);
-		pc1.exibirDetalhesPrduto(produto);
+		ProdutoController produtoController = new ProdutoController();
+		Produto produto = produtoController.criarproduto(101, "Computador", 3500);
 		
 		Date data = new Date();
 		
-		PedidoController pc = new PedidoController();
+		PedidoController pedidoController= new PedidoController();
+		Pedido pedido = pedidoController.criarPedido(2, 1, data, cliente, produto);
 		
-		Pedido pedido = pc.criarPedido(2, 1, data, cliente, produto);
+	
+		clienteController.exibirDetalhesClinte(cliente);
+		produtoController.exibirDetalhesPrduto(produto);
+		pedidoController.exibirDetalhesPedido(pedido);
 		
-		pc.exibirDetalhesPedido(pedido);
+		
+		
+
 		
 		
 	}
