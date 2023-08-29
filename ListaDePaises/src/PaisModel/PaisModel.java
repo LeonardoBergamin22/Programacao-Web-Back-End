@@ -8,6 +8,10 @@ public class PaisModel {
 		this.nome = nome;
 		this.capital = capital;
 	}
+	
+	public PaisModel(String nome) {
+		this.nome = nome;
+	}
 
 	public String getNome() {
 		return nome;

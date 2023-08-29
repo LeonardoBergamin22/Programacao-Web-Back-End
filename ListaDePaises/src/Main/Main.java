@@ -12,7 +12,7 @@ public class Main {
 
 		int opcao = -1;
 		while (opcao != 0) {
-			System.out.println("+========= menu ==========+");
+			System.out.println("+========= Menu ==========+");
 			System.out.println("|1. Adicionar pais        |");
 			System.out.println("|2. Exibir lista de paises|");
 			System.out.println("|3. Remover pais          |");
@@ -20,6 +20,7 @@ public class Main {
 			System.out.println("|0. Sair                  |");
 			System.out.println("|Escolha uma opção        |");
 			System.out.println("+-------------------------+");
+			System.out.println("                           ");
 			opcao = scanner.nextInt();
 
 			switch (opcao) {
@@ -45,7 +46,6 @@ public class Main {
 				scanner.nextLine();
 				String nomePais = scanner.nextLine();
 				paisController.removerDaListaDePaises(nomePais);
-				System.out.println("Pais removido com sucesso");
 				break;
 				
 			case 4:
@@ -54,7 +54,7 @@ public class Main {
 				break;
 
 			case 0:
-				System.out.println("saindo...");
+				System.out.println("Saindo...");
 				break;
 
 			default:

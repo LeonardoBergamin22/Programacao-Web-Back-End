@@ -3,32 +3,33 @@ package PaisController;
 import java.util.ArrayList;
 import java.util.List;
 
+import DAO.PaisDAO;
 import PaisModel.PaisModel;
 import PaisView.PaisView;
 
 public class PaisController {
-	private List<PaisModel> listaDePaises;
 	private PaisView paisView;
+	private PaisDAO paisDAO;
 
 	public PaisController() {
-		listaDePaises = new ArrayList<>();
 		paisView = new PaisView();
-
+		paisDAO = new PaisDAO();
 	}
 
 	public void adicionarPais(String nome, String capital) {
 		PaisModel pais = new PaisModel(nome, capital);
-		listaDePaises.add(pais);
+		paisDAO.adicionaPais(pais);
 	}
 
 	public void exibirListaDePaises() {
-		paisView.exibirListaDePaises(listaDePaises);
+		paisView.exibirListaDePaises(paisDAO.getListaDePaises());
 	}
 
-	public void removerDaListaDePaises(String Nome) {
-		for (int i = 0; i < listaDePaises.size(); i++) {
-			if (listaDePaises.get(i).getNome().equalsIgnoreCase(Nome)) {
-				listaDePaises.remove(i);
+	public void removerDaListaDePaises(String nome) {
+		for (int i = 0; i < paisDAO.getListaDePaises().size(); i++) {
+			if (paisDAO.getListaDePaises().get(i).getNome().equalsIgnoreCase(nome)) {
+				paisDAO.removePais(paisDAO.getListaDePaises().get(i));
+				paisView.exibirRemovido(nome);
 			}
 
 		}
@@ -36,7 +37,7 @@ public class PaisController {
 	}
 
 	public void limparLista() {
-		listaDePaises.clear();
+		paisDAO.limpaLista();
 		paisView.exibirLimpa();
 	}
 }
