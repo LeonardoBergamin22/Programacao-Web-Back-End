@@ -2,7 +2,7 @@ package main;
 
 import java.util.Scanner;
 
-import paiscontroller.PaisController;
+import controller.PaisController;
 
 public class Main {
 

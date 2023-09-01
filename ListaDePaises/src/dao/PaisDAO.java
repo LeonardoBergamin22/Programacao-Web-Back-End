@@ -3,7 +3,7 @@ package dao;
 import java.util.ArrayList;
 import java.util.List;
 
-import paismodel.PaisModel;
+import model.PaisModel;
 
 public class PaisDAO {
 	private List<PaisModel> listaDePaises;
